@@ -1,6 +1,7 @@
 import scraperwiki
 import urlparse
 import lxml.html
+import time
 
 # scrape_restaurants: Scrape restaurants on the page and then move to next page
 def scrape_restaurants(root, rest_id, base_url, city_url):
