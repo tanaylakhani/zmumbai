@@ -79,7 +79,7 @@ def scrape_and_look_for_next_link(url, rest_id):
 # ---------------------------------------------------------------------------
 
 base_url = 'http://www.zomato.com/'
-city_url = 'http://www.zomato.com/ncr/restaurants'
+city_url = 'http://www.zomato.com/mumbai/restaurants'
 
 rest_id = max(scraperwiki.sqlite.get_var('last_rest_id'), 1)
 url_to_scrape = scraperwiki.sqlite.get_var('last_url_scraped')
