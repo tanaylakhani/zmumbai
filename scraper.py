@@ -38,7 +38,8 @@ def scrape_restaurants(root, rest_id, base_url, city_url):
         # print restaurants_in_city
         scraperwiki.sqlite.save(["id"], restaurants_in_city, table_name="restaurants", verbose=0)
         return rest_id
-    except scraperwiki.Error as e:
+    except:
+        e = sys.exc_info()[0]
         scraperwiki.sqlite.save(["id"], restaurants_in_city, table_name="restaurants", verbose=0)
         print 'uh-oh! error happened while scraping restaurants!', e
         return None
@@ -48,7 +49,7 @@ def scrape_restaurants(root, rest_id, base_url, city_url):
 def scrape_and_look_for_next_link(url, rest_id):
     try:
         html = scraperwiki.scrape(url)
-    except scraperwiki.Error:
+    except:
         print "Sleeping for 10 seconds..."
         time.sleep(10)
         html = scraperwiki.scrape(url)
